@@ -1,0 +1,74 @@
+.history-line-container {
+    width: 100%;
+    height: 100%;
+
+    .hirtory-line-chart {
+        width: 100%;
+        height: 100%;
+    }
+    .line {
+        stroke: #888;
+        stroke-width: 0.2;
+    }
+
+    .point {
+        cursor: pointer;
+        fill-opacity: 0.8;
+        transition: fill-opacity 0.2s, r 0.5s;
+        &:hover {
+            r: 8;
+            fill-opacity: 0.6;
+        }
+    }
+
+    .point-hovered {
+        transition: fill-opacity 0.2s, r 0.5s;
+        fill-opacity: 0.5;
+    }
+
+    .container {
+        width: 110px;
+        cursor: pointer;
+        opacity: 0.8;
+        height: 30px;
+    }
+
+    .title {
+        cursor: pointer;
+        fill: #fff;
+    }
+    .vertical-line {
+        opacity: 0.2;
+    }
+
+    .history-no-data {
+        font-family: "Thasadith", sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: inherit;
+    }
+
+    .details-popup {
+        opacity: 0;
+        .content {
+            position: absolute;
+            background-color: #fff;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+
+            .close-icon {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                color: #888;
+                cursor: pointer;
+                font-size: 38px;
+            }
+        }
+    }
+}

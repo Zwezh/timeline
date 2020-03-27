@@ -1,0 +1,1 @@
+﻿export * from './resource-templates.service';

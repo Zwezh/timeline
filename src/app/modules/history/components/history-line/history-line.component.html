@@ -1,0 +1,56 @@
+<div class="history-line-container"
+     #chartContainer>
+  <svg id="hirtory-line-chart"
+       *ngIf="isLoaded"
+       class="hirtory-line-chart">
+    <line class="line axis-line"
+          [attr.x1]="leftEdge"
+          [attr.x2]="rightEdge"
+          [attr.y1]="height"
+          [attr.y2]="height"></line>
+    <line class="line end-point"
+          [attr.x1]="rightEdge"
+          [attr.x2]="rightEdge"
+          [attr.y1]="height"
+          [attr.y2]="deadlineHeight"></line>
+    <line class="line start-point"
+          [attr.x1]="leftEdge"
+          [attr.x2]="leftEdge"
+          [attr.y1]="height"
+          [attr.y2]="deadlineHeight"></line>
+    <text class="start-date"
+          x="0"
+          [attr.y]="dateY">{{startDate}}</text>
+    <text class="end-date"
+          [attr.x]="endDateX"
+          [attr.y]="dateY">{{endDate}}</text>
+    <g *ngFor="let item of _updatedCollection"
+       [attr.id]="item.id">
+      <circle r="4"
+              [attr.fill]="getColorById(item.id)"
+              class="point"
+              [attr.cx]="getCircleX(item.date)"
+              [attr.cy]="height"
+              (click)="onOpenDetailsPopup(item)"></circle>
+      <rect [attr.fill]="getColorById(item.id)"
+            class="container"
+            [attr.x]="item.offsetX"
+            [attr.y]="item.getContainerOffsetY(height)"
+            (click)="onOpenDetailsPopup(item)"></rect>
+      <text class="title"
+            [attr.x]="item.getTitleOffsetX()"
+            [attr.y]="item.getTitleOffsetY(height)"
+            (click)="onOpenDetailsPopup(item)">{{getTitleText(item.title)}}</text>
+      <line class="vertical-line"
+            [attr.stroke]="getColorById(item.id)"
+            [attr.x1]="getVerticalLineX(item.date)"
+            [attr.x2]="getVerticalLineX(item.date)"
+            [attr.y1]="height"
+            [attr.y2]="item.getVerticalLineOffsetY(height)"></line>
+    </g>
+  </svg>
+  <div class="history-no-data"
+       *ngIf="!isLoaded">
+    <h1>There are no data</h1>
+  </div>
+</div>

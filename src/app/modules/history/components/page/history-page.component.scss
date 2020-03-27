@@ -1,0 +1,17 @@
+.history-page {
+    margin: 0 20px;
+    padding-top: 20px;
+
+    .form-content {
+        margin-bottom: 20px;
+        .date {
+          & + .date {
+            margin-left: 15px;
+          }
+        }
+    }
+
+    .history-line {
+        height: calc(100vh - 320px);
+    }
+}

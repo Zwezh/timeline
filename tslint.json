@@ -1,0 +1,148 @@
+{
+  "extends": "tslint:recommended",
+  "rules": {
+    "array-type": [
+      true,
+      "generic"
+    ],
+    "arrow-parens": true,
+    "component-class-suffix": [
+      true,
+      "Component"
+    ],
+    "directive-class-suffix": [
+      true,
+      "Directive"
+    ],
+    "directive-selector": [
+      true,
+      "attribute",
+      "kebab-case"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "kebab-case"
+    ],
+    "interface-name": false,
+    "max-classes-per-file": [
+      true,
+      1
+    ],
+    "max-line-length": [
+      true,
+      160
+    ],
+    "member-access": false,
+    "variable-name": {
+      "options": [
+        "ban-keywords",
+        "require-const-for-all-caps",
+        "check-format",
+        "allow-leading-underscore"
+      ]
+    },
+    "member-ordering": [
+      true,
+      {
+        "order": [
+          "private-instance-field",
+          "protected-instance-field",
+          "public-instance-field",
+          "public-instance-method",
+          "protected-instance-method",
+          "private-instance-method"
+        ]
+      }
+    ],
+    "eofline": false,
+    "no-multiple-empty-lines": [
+      1,
+      {
+        "maxEOF": 0,
+        "maxBOF": 0
+      }
+    ],
+    "no-console": [
+      true,
+      "debug",
+      "info",
+      "time",
+      "timeEnd",
+      "trace"
+    ],
+    "no-empty": true,
+    "no-inferrable-types": [
+      true,
+      "ignore-params"
+    ],
+    "no-non-null-assertion": true,
+    "no-switch-case-fall-through": true,
+    "no-use-before-declare": true,
+    "no-var-requires": false,
+    "object-literal-sort-keys": false,
+    "ordered-imports": [
+      true,
+      {
+        "module-source-path": "full",
+        "grouped-imports": true,
+        "type": "list",
+        "groups": [
+          {
+            "name": "angular",
+            "match": "^[@angular].*",
+            "order": 1
+          },
+          {
+            "name": "rxjs",
+            "match": "^[rxjs].*",
+            "order": 1
+          },
+          {
+            "name": "internal modules",
+            "match": "^[@app].*",
+            "order": 3
+          },
+          {
+            "name": "relative dir",
+            "match": "..\/.*",
+            "order": 4
+          }
+        ]
+      }
+    ],
+    "quotemark": [
+      true,
+      "single"
+    ],
+    "space-before-function-paren": [
+      true,
+      {
+        "anonymous": "always",
+        "named": "never",
+        "asyncArrow": "always"
+      }
+    ],
+    "indent": [
+      true,
+      "spaces",
+      2
+    ],
+    "trailing-comma": [
+      true,
+      {
+        "multiline": "never",
+        "singleline": "never"
+      }
+    ],
+    "no-conflicting-lifecycle": true,
+    "no-host-metadata-property": true,
+    "no-input-rename": false,
+    "template-banana-in-box": true,
+    "use-lifecycle-interface": true,
+    "use-pipe-transform-interface": true
+  },
+  "rulesDirectory": [
+    "codelyzer"
+  ]
+}
